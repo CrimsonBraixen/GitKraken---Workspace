@@ -8,8 +8,8 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="\\\\"/>
 			<item value="\"/>
+			<item value="\\\\"/>
 			<item value="Stock"/>
 			<item value="F:\\UNLaM\\Programación Avanzada\\GitKraken - Workspace\\Trabajo_Practico_3-Complejidad_Computacional\\Lote de Pruebas\\IN\\"/>
 			<item value="productoPor"/>

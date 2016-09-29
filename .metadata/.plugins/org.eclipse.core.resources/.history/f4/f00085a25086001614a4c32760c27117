@@ -172,9 +172,9 @@ public class Tablero {
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException{
-		Tablero tablero = new Tablero("G:\\UNLaM\\Programacion-Avanzada\\GitKraken - Workspace\\OIA\\IN\\inConflictoEntreReinas\\romboDeConflictos.in");
+		Tablero tablero = new Tablero("G:\\UNLaM\\Programacion-Avanzada\\GitKraken - Workspace\\OIA\\IN\\inConflictoEntreReinas\\llenoDeReinasEnUnaSolaFila-Columna.in");
 		tablero.conflictos();
-		tablero.aArchivo("G:\\UNLaM\\Programacion-Avanzada\\GitKraken - Workspace\\OIA\\OUT\\outConflictoEntreReinas\\romboDeConflictos.out");
+		tablero.aArchivo("G:\\UNLaM\\Programacion-Avanzada\\GitKraken - Workspace\\OIA\\OUT\\outConflictoEntreReinas\\llenoDeReinasEnUnaSolaFila-Columna.out");
 		
 	}
 }
