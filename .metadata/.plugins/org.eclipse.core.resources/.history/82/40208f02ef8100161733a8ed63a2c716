@@ -1,0 +1,14 @@
+package patronesDeDiseño;
+
+public class FiguraCompuesta {
+
+	Rectangulo cuerpo;
+	Circulo rueda1;
+	Circulo rueda2;
+	
+	public Vagon(){
+		cuerpo = new Rectangulo(2,2);
+		rueda1 = new Circulo(3);
+		rueda2 = new Circulo(3);
+	}
+}

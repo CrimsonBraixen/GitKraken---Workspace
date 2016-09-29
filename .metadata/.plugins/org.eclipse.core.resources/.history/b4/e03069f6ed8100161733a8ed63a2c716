@@ -1,0 +1,9 @@
+package patronesDeDiseño;
+
+public class Circulo {
+	private double radio;
+
+	public Circulo(Punto centro, double radio) {
+		this.radio = radio;
+	}
+}

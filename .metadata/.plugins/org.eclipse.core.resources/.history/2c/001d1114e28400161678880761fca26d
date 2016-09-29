@@ -1,0 +1,28 @@
+package altaEnElCielo;
+
+public class Solve {
+
+	public static void main(String[] args){
+		int carretel=100, num1=11, num2=19, cant1=0, cant2=0;
+		String s1 = String.valueOf(num1);
+		String s2 = String.valueOf(num2);
+		
+		while(carretel > 0 && (carretel > num1 || carretel > num2)){
+			if(carretel >= num1){
+				carretel-=num1;
+				num1 += Integer.parseInt(String.valueOf(s1.charAt(0)));
+				num1 += Integer.parseInt(String.valueOf(s1.charAt(1)));
+				cant1++;
+			}
+			if(carretel >= num2){
+				carretel-=num2;
+				num2 += Integer.parseInt(String.valueOf(s1.charAt(0)));
+				num2 += Integer.parseInt(String.valueOf(s1.charAt(1)));
+				cant2++;
+			}
+			System.out.println(carretel);
+			System.out.println("Cadena 1: "+num1);
+			System.out.println("Cadena 2: "+num2);
+		}
+	}
+}

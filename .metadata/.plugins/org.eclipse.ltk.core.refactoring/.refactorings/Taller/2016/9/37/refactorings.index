@@ -1,0 +1,3 @@
+1474126986758	Encapsulate field 'salud'
+1474129722576	Encapsulate field 'batallon'
+1474130837817	Extract local variable 'batallon'

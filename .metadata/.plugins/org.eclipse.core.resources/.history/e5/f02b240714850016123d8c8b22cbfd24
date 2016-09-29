@@ -1,0 +1,9 @@
+package conflictosEntreReinas;
+
+public class Reinas {
+
+	private int fila;
+	private int columna;
+	
+	
+}

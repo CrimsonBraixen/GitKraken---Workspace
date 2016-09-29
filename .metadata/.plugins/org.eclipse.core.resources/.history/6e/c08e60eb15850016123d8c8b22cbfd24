@@ -1,0 +1,17 @@
+package conflictosEntreReinas;
+
+public class Reinas {
+
+	private int fila;
+	private int columna;
+	
+	public Reinas(){
+		fila=1;
+		columna=1;
+	}
+	
+	public Reinas(int fila, int columna){
+		this.fila = fila;
+		this.columna = columna;
+	}
+}

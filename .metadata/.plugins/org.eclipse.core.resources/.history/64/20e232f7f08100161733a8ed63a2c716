@@ -1,0 +1,16 @@
+package patronesDeDiseño;
+
+import java.util.List;
+
+public class FiguraCompuesta extends Figura{
+
+	List<Figura> figura;
+	
+	public double calcularArea(){
+		double total=0;
+		for(Figura figurita : figura){
+			total += figurita.calcularArea();
+		}
+		return total;
+	}
+}

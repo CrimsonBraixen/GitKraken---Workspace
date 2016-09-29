@@ -1,0 +1,3 @@
+1475098610978	Encapsulate field 'queue'
+1475098626455	Encapsulate field 'id'
+1475102738144	Extract method 'verificarConflicto'

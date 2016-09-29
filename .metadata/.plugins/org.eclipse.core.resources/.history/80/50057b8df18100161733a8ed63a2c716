@@ -1,0 +1,33 @@
+package patronesDeDiseño;
+
+import java.util.List;
+
+public class FiguraCompuesta extends Figura{
+
+	List<Figura> figura;
+	
+	public double calcularArea(){
+		double total=0;
+		for(Figura figurita : figura){
+			total += figurita.calcularArea();
+		}
+		return total;
+	}
+	
+	public void add(Figura figurita){
+		figura.add(figurita);
+	}
+	
+	public static void main(String[] args){
+		Circulo rueda = new Circulo(2);
+		Circulo rueda2 = new Circulo(2);
+		Rectangulo cuerpo = new Rectangulo(4,2);
+		
+		FiguraCompuesta vagon = new FiguraCompuesta();
+		vagon.add(rueda);
+		vagon.add(rueda2);
+		vagon.add(cuerpo);
+		double area = vagon.calcularArea();
+		System.out.println(area);
+	}
+}

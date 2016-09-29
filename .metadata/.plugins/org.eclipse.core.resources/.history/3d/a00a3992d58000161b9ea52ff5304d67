@@ -1,0 +1,16 @@
+package jUnit;
+
+import java.io.FileNotFoundException;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+public class MesadasDeGranitoTests {
+
+	@Test
+	public void unaPilaCadaMesadaTest() throws FileNotFoundException{
+		String path = "E:\\UNLaM\\Programación Avanzada\\GitKraken - Workspace\\OIA\\IN\\inMesadasDeGranito\\cada pieza es una pila.in";
+		Assert.assertTrue(mesadasDeGranito.Solve.solve(path) == 4);
+	}
+}

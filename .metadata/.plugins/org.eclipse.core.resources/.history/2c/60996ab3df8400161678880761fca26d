@@ -1,0 +1,16 @@
+package altaEnElCielo;
+
+public class Solve {
+
+	public static void main(String[] args){
+		int carretel;
+		int[2] num1;
+		int[2] num2;
+		
+		while(carretel > 0){
+			if(carretel > num1)
+				carretel-=num1;
+				num1 += 
+		}
+	}
+}

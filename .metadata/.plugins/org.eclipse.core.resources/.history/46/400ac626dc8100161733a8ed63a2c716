@@ -1,0 +1,43 @@
+package punto;
+
+public class Punto2D {
+	private double x;
+	private double y;
+	
+	public Punto2D(){
+		x=0;
+		y=0;
+	}
+	
+	public Punto2D(double x, double y) {			
+		this.x = x;
+		this.y = y;
+	}
+
+	public double distanciaCon(Punto2D punto) {
+		return Math.sqrt( Math.pow(this.x - punto.x, 2) + Math.pow(this.y - punto.y, 2));
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	@Override
+	public String toString() {
+		return "( "+x+","+y+")";
+	}
+	
+	
+}

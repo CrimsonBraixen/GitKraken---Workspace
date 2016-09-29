@@ -1,0 +1,20 @@
+package jUnit;
+
+import java.io.FileNotFoundException;
+
+import org.junit.Test;
+
+import formandoEquipos.Solve;
+import junit.framework.Assert;
+
+public class formandoEquiposTests {
+	
+	@Test
+	public void empatanTresEquipos() throws FileNotFoundException{
+		String in = "E:\\UNLaM\\Programación Avanzada\\GitKraken - Workspace\\OIA\\IN\\inFormandoEquipos\\empatanTresEquipos.in";
+		String out = "E:\\UNLaM\\Programación Avanzada\\GitKraken - Workspace\\OIA\\OUT\\outFormandoEquipos\\empatanTresEquipos.out";
+		Solve solve = new Solve(in);
+		Assert.assertTrue(solve.resolver() == 18);
+		solve.aArchivo(out);
+	}
+}

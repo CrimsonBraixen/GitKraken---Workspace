@@ -1,0 +1,12 @@
+package patronesDeDiseño;
+
+import java.util.List;
+
+public class FiguraCompuesta extends Figura{
+
+	List<Figura> figura;
+	
+	public double calcularSuperficie(){
+		
+	}
+}

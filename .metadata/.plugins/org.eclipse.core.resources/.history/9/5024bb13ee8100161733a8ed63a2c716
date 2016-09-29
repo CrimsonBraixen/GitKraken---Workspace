@@ -1,0 +1,16 @@
+package patronesDeDiseño;
+
+public class Rectangulo {
+
+	private double largo;
+	private double ancho;
+	
+	public Rectangulo(){
+		largo = 2;
+		ancho = 2;
+	}
+	
+	public double calcularArea(){
+		return largo*ancho;
+	}
+}

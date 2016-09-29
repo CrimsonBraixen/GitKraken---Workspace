@@ -1,0 +1,17 @@
+package patronesDeDiseño;
+
+public class CompositePinturaDeTren {
+
+	public static main(String[] args){
+		Circulo rueda = new Circulo(2);
+		Circulo rueda2 = new Circulo(2);
+		Rectangulo cuerpo = new Rectangulo(4,2);
+		
+		FiguraCompuesta vagon = new FiguraCompuesta();
+		vagon.add(rueda);
+		vagon.add(rueda2);
+		vagon.add(cuerpo);
+		double area = calcularSuperficie();
+		System.out.println(area);
+	}
+}

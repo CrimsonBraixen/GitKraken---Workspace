@@ -1,0 +1,11 @@
+package punto;
+
+public interface Punto {
+	
+	public Punto clone(Punto punto);
+	public double distanciaCon(Punto punto);
+	public double distanciaAlOrigen();
+	public void desplazamiento(double dx, double dy, double dz);
+	public void desplazamiento(double dx, double dy);
+	public boolean equals(Punto punto);
+}

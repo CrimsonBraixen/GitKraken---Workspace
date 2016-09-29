@@ -1,0 +1,6 @@
+package patronesDeDiseño;
+
+public interface Figura {
+
+	
+}
