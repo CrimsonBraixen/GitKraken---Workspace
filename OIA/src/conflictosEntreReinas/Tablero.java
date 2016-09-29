@@ -28,9 +28,9 @@ public class Tablero {
 	}
 	
 	public void conflictos(){
-		int distanciaIzquierda=50001, distanciaDerecha=50001, distanciaArriba=10001, distanciaAbajo=10001, distanciaDiagonalPrincipalArriba=50001, distanciaDiagonalPrincipalAbajo=50001, distanciaDiagonalAntiPrincipalArriba=50001, distanciaDiagonalAntiPrincipalAbajo=50001, idDerecha=0, idIzquierda=0, idArriba=0, idAbajo=0, idDiagonalPrincipalArriba=0, idDiagonalPrincipalAbajo=0, idDiagonalAntiPrincipalArriba=0, idDiagonalAntiPrincipalAbajo=0;
-	
+
 		for(Reina valor1 : reinas){
+			int distanciaIzquierda=50001, distanciaDerecha=50001, distanciaArriba=10001, distanciaAbajo=10001, distanciaDiagonalPrincipalArriba=50001, distanciaDiagonalPrincipalAbajo=50001, distanciaDiagonalAntiPrincipalArriba=50001, distanciaDiagonalAntiPrincipalAbajo=50001, idDerecha=0, idIzquierda=0, idArriba=0, idAbajo=0, idDiagonalPrincipalArriba=0, idDiagonalPrincipalAbajo=0, idDiagonalAntiPrincipalArriba=0, idDiagonalAntiPrincipalAbajo=0;
 			for(Reina valor2 : reinas){
 				//verificarFilas(valor1, valor2, distanciaIzquierda, distanciaDerecha, idDerecha, idIzquierda);
 				int valor=0;
@@ -77,6 +77,14 @@ public class Tablero {
 						distanciaDiagonalAntiPrincipalArriba = Math.abs(valor);
 					}
 					else if(valor < 0 && distanciaDiagonalAntiPrincipalAbajo > Math.abs(valor)){
+						idDiagonalAntiPrincipalAbajo = valor2.getId();
+						distanciaDiagonalAntiPrincipalAbajo = Math.abs(valor);
+					}
+					else if(valor==0&& valor1.getFila()>valor2.getFila()&& distanciaDiagonalAntiPrincipalArriba > Math.abs(valor)){
+						idDiagonalAntiPrincipalArriba = valor2.getId();
+						distanciaDiagonalAntiPrincipalArriba = Math.abs(valor);
+					}
+					else if(valor==0&& valor1.getFila()<valor2.getFila()&& distanciaDiagonalAntiPrincipalArriba > Math.abs(valor)){
 						idDiagonalAntiPrincipalAbajo = valor2.getId();
 						distanciaDiagonalAntiPrincipalAbajo = Math.abs(valor);
 					}
@@ -138,9 +146,13 @@ public class Tablero {
 			pw = new PrintWriter(fichero);
 
 			for(Reina reina : reinas){
-				pw.print(reina.getQueue().size()+" ");
-				for(int i=0; i<reina.getQueue().size(); i++){
-					pw.print(reina.getQueue().poll()+" ");
+				int tamaño=reina.getQueue().size();
+				pw.print(tamaño+" ");
+				if(tamaño!=0){
+					for(int i=0; i<tamaño; i++){
+						pw.print(reina.getQueue().poll()+" ");
+					}
+//					pw.print(reina.getQueue().poll()+" ");
 				}
 				pw.println();
 			}
@@ -160,8 +172,9 @@ public class Tablero {
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException{
-		Tablero tablero = new Tablero("G:\\UNLaM\\Programacion-Avanzada\\GitKraken - Workspace\\OIA\\IN\\inConflictoEntreReinas\\romboDeConflictos.in");
-		tablero.conflictos();
-		tablero.aArchivo("G:\\UNLaM\\Programacion-Avanzada\\GitKraken - Workspace\\OIA\\OUT\\outConflictoEntreReinas\\romboDeConflictos.out");
+//		Tablero tablero = new Tablero("C:\\Users\\Pablo\\Workspace\\GitKraken---Workspace\\OIA\\IN\\inConflictoEntreReinas\\romboDeConflictos.in");
+//		tablero.conflictos();
+//		tablero.aArchivo("C:\\Users\\Pablo\\Workspace\\GitKraken---Workspace\\OIA\\OUT\\outConflictoEntreReinas\\romboDeConflictos.out");
+		
 	}
 }
