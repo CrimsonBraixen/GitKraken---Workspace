@@ -1,9 +1,0 @@
-package jUnit;
-
-public class formandoEquiposTests {
-
-	@Test
-	public void empatanTresEquipos(){
-		
-	}
-}

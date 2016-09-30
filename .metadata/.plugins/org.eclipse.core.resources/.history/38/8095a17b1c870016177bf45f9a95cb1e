@@ -1,0 +1,22 @@
+package vagonesDeTren;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class VagonesMinimos {
+
+	private Especie[] especies;
+	private int agresividadMaxima;
+	
+	public VagonesMinimos(String path) throws FileNotFoundException{
+		Scanner sc = new Scanner(new File(path));
+		especies = new Especie[sc.nextInt()];
+		agresividadMaxima = sc.nextInt();
+		sc.useDelimiter(" ");
+		for(int i=0; i<especies.length; i++){
+			especies[i] = new Especie(sc.next(), sc.nextInt(), sc.nextInt());
+		}
+		sc.close();
+	}
+}

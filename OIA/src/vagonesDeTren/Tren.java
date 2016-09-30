@@ -12,17 +12,26 @@ public class Tren {
 		agresividadTotal=0;
 	}
 	
-	public void add(){
-		vagones.add(new Vagon());
+	public void add(Vagon vagon){
+		vagones.add(vagon);
 	}
 	
-	public void CalcularAgresividadTotal(){
+	public int calcularAgresividadTotal(){
 		for(Vagon vagon:vagones){
 			agresividadTotal+=vagon.getAgresividad();
 		}
+		return agresividadTotal;
 	}
 	
 	public int getAgresividadTotal(){
 		return agresividadTotal;
+	}
+
+	public List<Vagon> getVagones() {
+		return vagones;
+	}
+
+	public void setVagones(List<Vagon> vagones) {
+		this.vagones = vagones;
 	}
 }
