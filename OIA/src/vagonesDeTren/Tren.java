@@ -14,9 +14,12 @@ public class Tren {
 	
 	public void add(Vagon vagon){
 		vagones.add(vagon);
+		
+		calcularAgresividadTotal();
 	}
 	
 	public int calcularAgresividadTotal(){
+		agresividadTotal=0;
 		for(Vagon vagon:vagones){
 			agresividadTotal+=vagon.getAgresividad();
 		}
@@ -33,5 +36,9 @@ public class Tren {
 
 	public void setVagones(List<Vagon> vagones) {
 		this.vagones = vagones;
+	}
+	
+	public int getSize(){
+		return vagones.size();
 	}
 }
