@@ -74,5 +74,16 @@ public class VagonesDeTrenTest {
 		test.aArchivo(out);
 		Assert.assertTrue(true);
 	}
+
+	@Test
+	public void Mixto() throws IOException{
+		String in = "C:\\Users\\Pablo\\Workspace\\GitKraken---Workspace\\OIA\\IN\\inVagonesDeTren\\06.Mixto.in.txt";
+		String out = "C:\\Users\\Pablo\\Workspace\\GitKraken---Workspace\\OIA\\OUT\\outVagonesDeTren\\06.Mixto.out";
+		
+		VagonesMinimos test =new VagonesMinimos(in);
+		test.calcularVagonesMinimos();
+		test.aArchivo(out);
+		Assert.assertTrue(true);
+	}
 }
 

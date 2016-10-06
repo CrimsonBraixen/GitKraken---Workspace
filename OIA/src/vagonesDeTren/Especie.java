@@ -38,10 +38,10 @@ public class Especie implements Comparable<Especie> {
 	@Override
 	public int compareTo(Especie arg0) {
 		if(this.agresividad>arg0.agresividad){
-			return 1;
+			return -1;
 		}
 		if(this.agresividad<arg0.agresividad){	
-			return -1;
+			return 1;
 		}
 		return 0;
 	}

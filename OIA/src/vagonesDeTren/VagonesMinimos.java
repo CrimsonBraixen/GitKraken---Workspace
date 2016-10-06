@@ -54,6 +54,7 @@ public class VagonesMinimos {
 					if(especies[i].getAgresividad() < vagon.getAgresividadMinima()){
 						if(vagon.getAgresividadMaxima() - especies[i].getAgresividad() <= agresividadMaxima - tren.getAgresividadTotal()){
 							vagon.add(especies[i]);
+//							tren.calcularAgresividadTotal();
 							flag=1;
 						}
 					}
@@ -67,11 +68,13 @@ public class VagonesMinimos {
 				Vagon vagon2 = new Vagon();
 				vagon2.add(especies[i]);
 				tren.add(vagon2);
+//				tren.calcularAgresividadTotal();
 			}
 			else{				
 				flag=0;
 			}
 		}
+		tren.calcularAgresividadTotal();
 	}
 	
 	

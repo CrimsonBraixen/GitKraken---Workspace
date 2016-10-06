@@ -23,8 +23,8 @@ public class Vagon {
 	}
 
 	private void calcularAgresividad() {
-		agresividadMaxima=Collections.max(animales).getAgresividad();
-		agresividadMinima=Collections.min(animales).getAgresividad();
+		agresividadMaxima=Collections.min(animales).getAgresividad();
+		agresividadMinima=Collections.max(animales).getAgresividad();
 		agresividad = agresividadMaxima-agresividadMinima;
 	}
 	
