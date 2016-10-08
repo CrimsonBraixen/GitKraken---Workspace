@@ -48,4 +48,9 @@ public class Deposito {
 	public void setVolumen(int volumen) {
 		this.volumen = volumen;
 	}
+
+	public void alturaActual(int profundidadActual) {
+		cantidadDeLiquidoActual=profundidadActual;
+		
+	}
 }

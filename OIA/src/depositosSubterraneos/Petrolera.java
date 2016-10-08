@@ -66,13 +66,14 @@ public class Petrolera {
 					for(Deposito deposito : depositosActivos){
 						sumaDeSuperficies += deposito.getSuperficie();
 					}
-					profundidadFinal = volumenTotal / sumaDeSuperficies;
+					profundidadFinal =(float)volumenTotal / sumaDeSuperficies;
 					volumenTotal = 0;
 				}
 				else{
 					for(Deposito deposito : depositosActivos){
 						volumenTotal -= diferenciaDeProfundidades * deposito.getSuperficie();
-						deposito.sumarLiquido(diferenciaDeProfundidades * deposito.getSuperficie());
+						deposito.sumarLiquido(diferenciaDeProfundidades);
+						
 					}
 					profundidadActual = proximaProfundidad;
 				}
@@ -92,7 +93,8 @@ public class Petrolera {
 			}
 			else{
 				pw.println(depositosActivos.size());
-				pw.println((int)(depositosActivos.get(0).getProfundidad() - depositosActivos.get(0).getCantidadDeLiquidoActual() - profundidadFinal));
+				float distancia=(depositosActivos.get(0).getProfundidad() - depositosActivos.get(0).getCantidadDeLiquidoActual() - profundidadFinal);
+				pw.println((int)distancia);
 			}
 		}
 		catch(Exception e){
