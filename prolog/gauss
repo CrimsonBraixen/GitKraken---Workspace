@@ -1,0 +1,2 @@
+
+gauss(N,R,I):-N1 is N-1, I1 is I+1, gauss(N1,R1,I1),RP is N+I, R is RP+R1).
