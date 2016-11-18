@@ -10,22 +10,25 @@ public class GenerarFatiga {
 
 	private int cantidadDeNodos;
 	private int cantidadDeAristas;
-	private boolean[][]matrizDeAdyacencia;
+//	private boolean[][]matrizDeAdyacencia;
+	private MatrizSimetrica matrizDeAdyacencia;
 	
 	public GenerarFatiga(int cantidadDeNodos, int cantidadDeAristas){
 		this.cantidadDeNodos = cantidadDeNodos;
 		this.cantidadDeAristas = 0;
-		matrizDeAdyacencia = new boolean[cantidadDeNodos][cantidadDeNodos];
-		double porcentajeDeAdyacencia = (2*cantidadDeAristas)/(cantidadDeNodos*(cantidadDeNodos-1));
+//		matrizDeAdyacencia = new boolean[cantidadDeNodos][cantidadDeNodos];
+		matrizDeAdyacencia = new MatrizSimetrica(cantidadDeNodos);
+		double porcentajeDeAdyacencia = (double)(cantidadDeAristas)/((cantidadDeNodos*(cantidadDeNodos-1))/2);
 		Random random = new Random();
 		for(int i=0; i<cantidadDeNodos-1; i++){
 			for(int j=i+1; j<cantidadDeNodos; j++){
-				if(random.nextDouble()<porcentajeDeAdyacencia){
-					matrizDeAdyacencia[i][j]=true;
+				double numeroRandom=random.nextDouble();
+				if(numeroRandom<porcentajeDeAdyacencia){
+					matrizDeAdyacencia.setValor(i, j, true);
 					this.cantidadDeAristas++;
 				}
 				else{
-					matrizDeAdyacencia[i][j]=false;
+					matrizDeAdyacencia.setValor(i, j, false);
 				}
 			}
 		}
@@ -37,7 +40,7 @@ public class GenerarFatiga {
 		pw.println(cantidadDeAristas);
 		for(int i=0; i<cantidadDeNodos-1; i++){
 			for(int j=i+1; j<cantidadDeNodos; j++){
-				if(matrizDeAdyacencia[i][j]){
+				if(matrizDeAdyacencia.getValor(i, j)){
 					pw.println(i+" "+j);
 				}
 			}

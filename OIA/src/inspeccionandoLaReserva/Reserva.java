@@ -10,7 +10,9 @@ import java.util.Stack;
 
 public class Reserva {
 	private int cantidadDeCaminos;
-	private boolean [][]matrizDeAdyacencia;
+	//private boolean [][]matrizDeAdyacenciaSalida;
+	private MatrizSimetrica matrizDeAdyacenciaSalida;
+	private MatrizSimetrica matrizDeAdyacenciaEntrada;
 	private int cantidadDeNodos;
 	private int cantidadDeAristas;
 	
@@ -19,9 +21,15 @@ public class Reserva {
 		cantidadDeNodos = scanner.nextInt();
 		cantidadDeAristas = scanner.nextInt();
 		cantidadDeCaminos = 0;
-		matrizDeAdyacencia = new boolean[cantidadDeNodos][cantidadDeNodos];
+		//matrizDeAdyacenciaSalida = new boolean[cantidadDeNodos][cantidadDeNodos];
+		matrizDeAdyacenciaSalida=new MatrizSimetrica(cantidadDeNodos);
+		matrizDeAdyacenciaEntrada=new MatrizSimetrica(cantidadDeNodos);
+		matrizDeAdyacenciaSalida.inicialiarEnFalse();
 		for(int i=0; i<cantidadDeAristas; i++){
-			matrizDeAdyacencia[scanner.nextInt()-1][scanner.nextInt()-1] = true;
+			int valorInicial=scanner.nextInt()-1;
+			int valorFinal=scanner.nextInt()-1;
+			matrizDeAdyacenciaSalida.setValor(valorInicial,valorFinal, true);
+			
 		}
 		scanner.close();
 	}
@@ -50,7 +58,7 @@ public class Reserva {
 	private ArrayList<Integer> obtenerAdyacentes(int nodoActual) {
 		ArrayList<Integer> adyacentes = new ArrayList<>();
 		for(int i=0; i<cantidadDeNodos; i++){
-			if(matrizDeAdyacencia[nodoActual][i]){
+			if((nodoActual<i&&matrizDeAdyacenciaSalida.getValor(nodoActual, i))||(nodoActual>i&&matrizDeAdyacenciaSalida.getValor(i,nodoActual))){
 				adyacentes.add(i);
 			}
 		}
@@ -59,9 +67,9 @@ public class Reserva {
 
 	private int obtenerNodoInicial() {
 		boolean flag=false;
-		for(int i=0; i<cantidadDeNodos; i++){
-			for(int j=0; j<cantidadDeNodos; j++){
-				if(matrizDeAdyacencia[j][i]){
+		for(int i=0; i<cantidadDeNodos-1; i++){
+			for(int j=i+1; j<cantidadDeNodos; j++){
+				if(matrizDeAdyacenciaEntrada.getValor(j, i)){
 					flag = true;
 				}
 			}
@@ -75,9 +83,9 @@ public class Reserva {
 
 	private int obtenerNodoFinal() {
 		boolean flag=false;
-		for(int i=0; i<cantidadDeNodos; i++){
-			for(int j=0; j<cantidadDeNodos; j++){
-				if(matrizDeAdyacencia[i][j]){
+		for(int i=0; i<cantidadDeNodos-1; i++){
+			for(int j=i+1; j<cantidadDeNodos; j++){
+				if(matrizDeAdyacenciaSalida.getValor(i, j)){
 					flag = true;
 				}
 			}
